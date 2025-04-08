@@ -1,0 +1,17 @@
+
+
+services:
+  flask_app:
+    build: ./flask
+    image: shrut18/flask:latest
+    ports:
+      - "5000:5000"
+    command: python app.py runserver 0.0.0.0:5000
+
+  django_app:
+    build: ./django
+    image: shrut18/django:latest
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+
